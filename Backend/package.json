@@ -1,0 +1,19 @@
+{
+  "name": "projet7-backend",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirKalany/Projet-7-Openclassrooms-Kasa.git"
+  },
+  "author": "Kalany",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SirKalany/Projet-7-Openclassrooms-Kasa/issues"
+  },
+  "homepage": "https://github.com/SirKalany/Projet-7-Openclassrooms-Kasa#readme"
+}
