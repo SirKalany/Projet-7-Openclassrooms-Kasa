@@ -1,0 +1,84 @@
+@import 'color.scss';
+
+footer {
+
+    background-color: $location_color;
+    color: #FFFFFF;
+
+    padding: 20px;
+
+    h2 {
+        font-family: Shrikhand;
+        font-weight: 500;
+        margin-top: 0;
+    }
+
+    h3 {
+
+        margin: 0;
+        padding-bottom: 7px;
+        font-weight: 400;
+
+    }
+
+    .footer__click {
+
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-items: center;
+
+        gap: 15px;
+
+        i {
+            height: 13px;
+            width: 12px;
+        }
+
+        h3 {
+            font-weight: 500;
+        }
+    }
+}
+
+@media screen and (min-width:1440px) {
+
+    footer {
+
+        display: flex;
+
+        flex-direction: row-reverse;
+
+        gap: 50px;
+
+        padding-top: 50px;
+
+        h2 {
+
+            margin: 0;
+
+        }
+
+        .footer__content {
+
+            display: flex;
+
+            flex-direction: row;
+
+            gap: 15px;
+
+            .footer__click {
+
+                h3 {
+
+                    font-size: 16px;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
