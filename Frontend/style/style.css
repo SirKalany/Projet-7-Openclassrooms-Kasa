@@ -1,0 +1,30 @@
+body {
+    margin: 0px;
+}
+
+header {
+    display: flex;
+    
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+
+    justify-content: space-between;
+}
+
+header img {
+    width: 145px;
+    height: 47px;
+}
+
+header .headerLinks {
+    display: flex;
+    
+    gap: 20px;
+
+    align-self: center;
+}
+
+header .headerLinks a {
+    font-size: 17px;
+}
