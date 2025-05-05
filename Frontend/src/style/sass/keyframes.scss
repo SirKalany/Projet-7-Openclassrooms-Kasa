@@ -1,0 +1,50 @@
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes MenuLoaded {
+    from {
+        transform: scale(0);
+        translate: 200% 0;
+    }
+
+    to {
+        transform: scale(1);
+        translate: 0 0;
+    }
+}
+
+@keyframes MenuPlatsPop {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes FadeOut {
+    0% {
+        opacity: 1;
+        scale: 1;
+    }
+
+    50% {
+
+        opacity: 0;
+        scale: 2;
+
+    }
+
+    100% {
+        opacity: 0;
+        scale: 1;
+    }
+}
