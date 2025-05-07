@@ -1,0 +1,30 @@
+.errorContent {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-grow: 1;
+}
+
+.error404 {
+    font-size: 96px;
+    margin-bottom: 0;
+    background-color: white;
+    color: #FF6060;
+}
+
+.errorDescription {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 100px;
+    background-color: white;
+    color: #FF6060;
+}
+
+.errorBackToIndex {
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}

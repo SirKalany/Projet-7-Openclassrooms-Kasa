@@ -7,7 +7,6 @@ body {
 #root {
   width: 100%;
   margin: 0;
-  padding: 20px;
   text-align: center;
 }
 
@@ -23,16 +22,20 @@ body {
 
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .header .linksHeader {
     display: flex;
-    max-width: 191px;
+    max-width: 141px;
     justify-content: space-between;
     width: 100%;
     text-decoration: none;
     font-weight: 550;
     padding-left: 20px;
+
+    font-size: 12px;
 }
 
 .header .linksHeader a {
