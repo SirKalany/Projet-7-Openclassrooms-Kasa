@@ -1,0 +1,47 @@
+.logementGrid {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  padding: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.gridItem {
+    background-color: #ff6060;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 255px;
+  }
+
+@media screen and (min-width: 900px) {
+  .logementGrid {
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: #f6f6f6;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 30px;
+    padding-bottom: 0;
+    column-gap: 70px;
+    row-gap: 50px
+  }
+  .gridItem {
+    aspect-ratio: 1 / 1;
+    height: unset;
+    max-width: 100%;
+    position: relative;
+  }
+}

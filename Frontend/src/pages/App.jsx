@@ -1,5 +1,7 @@
+import React from "react";
 import indexBackground from "../assets/index_background.png";
 import "../style/App.css";
+import LogementGrid from "../components/LogementGrid";
 
 function App() {
   return (
@@ -12,9 +14,7 @@ function App() {
         />
         <h1 className="bannerText">Chez vous, partout et ailleurs</h1>
       </div>
-      <div>
-        <h1 className="content">Main Content</h1>
-      </div>
+      <LogementGrid />
     </>
   );
 }
