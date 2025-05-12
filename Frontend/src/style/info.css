@@ -35,11 +35,19 @@
 }
 
 .accordion-body {
-    display: none;
-    padding: 10px;
-    border: 1px solid #ddd;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease-in-out;
+    padding: 0 10px;
+    border: 1px solid transparent;
     border-radius: 5px;
     text-align: start;
+}
+
+.accordion-body.active {
+    max-height: 500px;
+    padding: 10px;
+    border: 1px solid #ddd;
 }
 
 .accordion-body p {
@@ -54,6 +62,10 @@
     .banner {
         margin-bottom: 20px;
     }
+
+    .accordion-item {
+        margin-bottom: 30px;
+    }
     
     .accordion {
         display: flex;
@@ -61,7 +73,7 @@
     
         margin: 200px;
         margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         flex-grow: 1;
     }
   }

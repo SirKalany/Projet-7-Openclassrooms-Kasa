@@ -13,21 +13,23 @@ function Accordion({ menus }) {
 
   return (
     <div className="accordion">
-      {menus.map((menu, index) => (
-        <div className="accordion-item" key={index}>
-          <button
-            className="accordion-header"
-            onClick={() => toggleAccordion(index)}
-          >
-            {menu.title}
-          </button>
-          {activeIndexes.includes(index) && (
-            <div className="accordion-body">
+      {menus.map((menu, index) => {
+        const isActive = activeIndexes.includes(index);
+
+        return (
+          <div className="accordion-item" key={index}>
+            <button
+              className="accordion-header"
+              onClick={() => toggleAccordion(index)}
+            >
+              {menu.title}
+            </button>
+            <div className={`accordion-body ${isActive ? "active" : ""}`}>
               <p>{menu.content}</p>
             </div>
-          )}
-        </div>
-      ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
