@@ -1,0 +1,120 @@
+.logementPage {
+  padding: 20px;
+}
+
+.logementImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.logementHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.housingInfo {
+  flex: 1;
+  min-width: 300px;
+}
+
+.housingTitle {
+  margin: 0;
+  font-size: 24px;
+}
+
+.housingLocation {
+  margin: 5px 0;
+  font-weight: normal;
+  font-size: 18px;
+  color: #555;
+}
+
+.housingTags {
+  margin-top: 10px;
+}
+
+.housingTag {
+  background-color: #ff6060;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.hostSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 150px;
+}
+
+.rating {
+  display: flex;
+  gap: 5px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.star {
+  color: #e3e3e3;
+}
+
+.star.filled {
+  color: #ff6060;
+}
+
+.hostInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hostName {
+  font-size: 14px;
+}
+
+.hostPicture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.accordionSection {
+  margin-top: 30px;
+}
+
+.accordionItem {
+  margin-bottom: 10px;
+}
+
+.accordionHeader {
+  background-color: #ff6060;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.accordionBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.accordionBody.active {
+  max-height: 500px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
