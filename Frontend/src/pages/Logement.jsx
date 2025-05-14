@@ -1,34 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import logements from "../data/logements.json";
+import Accordion from "../components/Accordion";
 import "../style/Logement.css"; // Importation du CSS
-
-function Accordion(props) {
-  const [isOpen, setIsOpen] = React.useState(false);
-
-  function toggle() {
-    setIsOpen(!isOpen);
-  }
-
-  return (
-    <div className="accordionItem">
-      <button className="accordionHeader" onClick={toggle}>
-        {props.title}
-      </button>
-      <div className={`accordionBody${isOpen ? " open" : ""}`}>
-        {Array.isArray(props.content) ? (
-          <ul>
-            {props.content.map(function (item, index) {
-              return <li key={index}>{item}</li>;
-            })}
-          </ul>
-        ) : (
-          <p>{props.content}</p>
-        )}
-      </div>
-    </div>
-  );
-}
 
 function Rating(props) {
   const stars = [];
@@ -91,10 +65,22 @@ function Logement() {
         </div>
       </div>
 
-      <div className="accordionSection">
-        <Accordion title="Description" content={logement.description} />
-        <Accordion title="Équipements" content={logement.equipments} />
-      </div>
+<div className="accordionSection">
+  <Accordion
+    menus={[
+      {
+        title: "Description",
+        content: logement.description,
+      },
+      {
+        title: "Équipements",
+        content: Array.isArray(logement.equipments)
+          ? logement.equipments.join(", ")
+          : logement.equipments,
+      },
+    ]}
+  />
+</div>
     </div>
   );
 }
