@@ -15,7 +15,6 @@
 
 .housingCard {
   background-color: #ff6060;
-  padding: 20px;
   text-align: center;
   border-radius: 10px;
   display: flex;
@@ -54,6 +53,7 @@
   .housingGridWrapper {
     margin-left: 100px;
     margin-right: 100px;
+    border-radius: 15px;
     background-color: #f6f6f6;
   }
 

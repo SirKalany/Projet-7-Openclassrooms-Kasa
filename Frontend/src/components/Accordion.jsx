@@ -12,19 +12,19 @@ function Accordion({ menus }) {
   };
 
   return (
-    <div className="accordion">
+    <div className="accordionSection">
       {menus.map((menu, index) => {
         const isActive = activeIndexes.includes(index);
 
         return (
-          <div className="accordion-item" key={index}>
+          <div className="accordionItem" key={index}>
             <button
-              className="accordion-header"
+              className="accordionHeader"
               onClick={() => toggleAccordion(index)}
             >
               {menu.title}
             </button>
-            <div className={`accordion-body ${isActive ? "active" : ""}`}>
+            <div className={`accordionBody ${isActive ? "active" : ""}`}>
               <p>{menu.content}</p>
             </div>
           </div>

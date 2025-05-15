@@ -20,7 +20,9 @@ function Info() {
           alt="Image d'une montagne"
         />
       </div>
+        <div className="accordionInfo">
       <Accordion menus={menus} />
+      </div>
     </>
   );
 }

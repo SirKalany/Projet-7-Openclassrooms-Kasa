@@ -1,45 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import logements from "../data/logements.json";
 import Accordion from "../components/Accordion";
-import "../style/Logement.css"; // Importation du CSS
+import "../style/Logement.css";
 
 function Rating(props) {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
-    if (i <= props.value) {
-      stars.push(<span key={i} className="star filled">★</span>);
-    } else {
-      stars.push(<span key={i} className="star">★</span>);
-    }
+    stars.push(
+      <span key={i} className={`star ${i <= props.value ? "filled" : ""}`}>
+        ★
+      </span>
+    );
   }
   return <div className="rating">{stars}</div>;
 }
 
 function Logement() {
   const params = useParams();
-  const [showError, setShowError] = useState(false);
+  const navigate = useNavigate();
 
-  const logement = logements.find(function (item) {
-    return item.id === params.id;
-  });
+  const logement = logements.find((item) => item.id === params.id);
 
-  useEffect(function () {
+  useEffect(() => {
     if (!logement) {
-      setShowError(true); // Si pas de logement, montre un message d'erreur
+      navigate("/error", { replace: true }); // redirection vers /error
     }
-  }, [logement]);
+  }, [logement, navigate]);
 
-  if (showError) {
-    return (
-      <div className="errorContainer">
-        <h2>Le logement n'a pas été trouvé.</h2>
-        <p>
-          <Link to="/" className="errorLink">Retour à l'accueil</Link>
-        </p>
-      </div>
-    );
-  }
+  if (!logement) return null; // évite le rendu le temps que la redirection se fasse
 
   return (
     <div className="logementPage">
@@ -50,9 +39,9 @@ function Logement() {
           <h1 className="housingTitle">{logement.title}</h1>
           <h2 className="housingLocation">{logement.location}</h2>
           <div className="housingTags">
-            {logement.tags.map(function (tag, index) {
-              return <span key={index} className="housingTag">{tag}</span>;
-            })}
+            {logement.tags.map((tag, index) => (
+              <span key={index} className="housingTag">{tag}</span>
+            ))}
           </div>
         </div>
 
@@ -65,22 +54,22 @@ function Logement() {
         </div>
       </div>
 
-<div className="accordionSection">
-  <Accordion
-    menus={[
-      {
-        title: "Description",
-        content: logement.description,
-      },
-      {
-        title: "Équipements",
-        content: Array.isArray(logement.equipments)
-          ? logement.equipments.join(", ")
-          : logement.equipments,
-      },
-    ]}
-  />
-</div>
+      <div className="Accordion">
+        <Accordion
+          menus={[
+            {
+              title: "Description",
+              content: logement.description,
+            },
+            {
+              title: "Équipements",
+              content: Array.isArray(logement.equipments)
+                ? logement.equipments.join(", ")
+                : logement.equipments,
+            },
+          ]}
+        />
+      </div>
     </div>
   );
 }
