@@ -1,18 +1,17 @@
 import React, { useState } from "react";
+import "../style/Accordion.css";
 
-function Accordion({ menus }) {
+function Accordion({ menus, className = "" }) {
   const [activeIndexes, setActiveIndexes] = useState([]);
 
   const toggleAccordion = (index) => {
-    if (activeIndexes.includes(index)) {
-      setActiveIndexes(activeIndexes.filter((i) => i !== index));
-    } else {
-      setActiveIndexes([...activeIndexes, index]);
-    }
+    setActiveIndexes((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
   };
 
   return (
-    <div className="accordionSection">
+    <div className={`accordionSection ${className}`}>
       {menus.map((menu, index) => {
         const isActive = activeIndexes.includes(index);
 
@@ -23,9 +22,24 @@ function Accordion({ menus }) {
               onClick={() => toggleAccordion(index)}
             >
               {menu.title}
+              <span className="accordionToggle">
+                <i
+                  className={`fa-solid fa-angle-up accordionIcon ${
+                    isActive ? "rotated" : ""
+                  }`}
+                ></i>
+              </span>
             </button>
             <div className={`accordionBody ${isActive ? "active" : ""}`}>
-              <p>{menu.content}</p>
+              {Array.isArray(menu.content) ? (
+                <ul className="accordionList">
+                  {menu.content.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{menu.content}</p>
+              )}
             </div>
           </div>
         );

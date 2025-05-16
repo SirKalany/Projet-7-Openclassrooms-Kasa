@@ -1,85 +1,51 @@
-.infoBackground {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
-    filter: brightness(70%);
+.infoPage {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
-.accordion {
-    display: flex;
-    flex-direction: column;
+.infoBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  filter: brightness(70%);
+}
 
-    margin: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    flex-grow: 1;
+.infoBanner {
+  height: 110px;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .accordionInfo {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.accordionItem {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.accordionHeader {
-    background-color: #ff6060;
-    color: white;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.accordionBody {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease-in-out;
-    padding: 0 10px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    text-align: start;
-}
-
-.accordionBbody.active {
-    max-height: 500px;
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-.accordionBody p {
-    margin: 0;
-}
-
-.accordionItem .accordionBody {
-    display: block;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 @media screen and (min-width: 900px) {
-    .banner {
-        margin-bottom: 20px;
-    }
-
-    .accordionItem {
-        margin-bottom: 30px;
-    }
-    
-    .accordion {
-        display: flex;
-        flex-direction: column;
-    
-        margin: 200px;
-        margin-top: 10px;
-        margin-bottom: 0px;
-        flex-grow: 1;
-    }
+  .infoPage {
+    margin-bottom: 20px;
   }
-  
+  .infoBanner {
+    height: 220px;
+    width: calc(100% - 200px);
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    position: relative;
+  }
+
+  .infoBackground {
+    border-radius: 25px;
+  }
+
+  .accordionInfo {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}

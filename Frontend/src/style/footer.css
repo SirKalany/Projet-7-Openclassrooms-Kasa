@@ -9,6 +9,7 @@
 
   background-color: black;
   color: white;
+  flex: 1;
 }
 
 .footer h3 {

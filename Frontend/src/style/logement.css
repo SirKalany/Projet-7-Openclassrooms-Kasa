@@ -1,6 +1,9 @@
 .logementPage {
   padding: 20px;
+  padding-bottom: 20px;
+  padding-top: 0px;
   text-align: left;
+  flex-grow: 1;
 }
 
 .logementImage {
@@ -14,13 +17,11 @@
   display: flex;
   flex-direction: column;
   justify-content: left;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .housingInfo {
-  flex: 1;
   min-width: 300px;
-  
 }
 
 .housingTitle {
@@ -46,16 +47,22 @@
   color: white;
   padding: 5px 10px;
   border-radius: 8px;
-  margin-right: 5px;
+  margin-right: 10px;
   font-size: 10px;
+  min-width: 60px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
 }
 
 .hostSection {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .rating {
@@ -76,53 +83,93 @@
 .hostInfo {
   display: flex;
   align-items: center;
+  color: #ff6060;
   gap: 10px;
 }
 
 .hostName {
   text-align: right;
-  font-size: 14px;
-  max-width: 70px;
+  font-size: 12px;
+  max-width: 80px;
   margin: 0;
 }
 
 .hostPicture {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.accordionSection {
-  margin-top: 15px;
+.logementPage .accordionSection {
+  margin-top: 5px;
 }
 
-.accordionItem {
-  margin-bottom: 10px;
+.accordionList {
+  margin: 0;
 }
 
-.accordionHeader {
-  background-color: #ff6060;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  border: none;
-  width: 100%;
-  text-align: left;
-  border-radius: 5px;
-}
+/* Responsive */
+@media screen and (min-width: 900px) {
+  .logementPage {
+    margin-left: 80px;
+    margin-right: 80px;
+    padding-bottom: 30px;
+  }
 
-.accordionBody {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  padding: 0 10px;
-  border: 1px solid transparent;
-  border-radius: 5px;
-}
+  .carousel {
+    height: 415px;
+  }
 
-.accordionBody.active {
-  max-height: 500px;
-  padding: 10px;
-  border: 1px solid #ddd;
+  .logementHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .housingTitle {
+    font-size: 36px;
+  }
+
+  .housingLocation {
+    font-size: 18px;
+  }
+
+  .housingTags {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .housingTag {
+    font-size: 14px;
+    border-radius: 12px;
+    min-width: 80px;
+  }
+
+  .hostSection {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    margin-top: 0px;
+  }
+
+  .hostInfo {
+    gap: 15px;
+  }
+
+  .hostName {
+    font-size: 18px;
+  }
+
+  .hostPicture {
+    width: 64px;
+    height: 64px;
+  }
+
+  .rating {
+    font-size: 35px;
+  }
+  .accordionSection.horizontal {
+    flex-direction: row;
+    gap: 75px;
+  }
 }
