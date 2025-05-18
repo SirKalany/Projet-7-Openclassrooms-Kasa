@@ -42,7 +42,7 @@ function Carousel({ pictures, title }) {
             onClick={goToNext}
           />
           <div className="carouselCounter">
-            {currentIndex + 1} / {pictures.length}
+            {currentIndex + 1}/{pictures.length}
           </div>
         </>
       )}

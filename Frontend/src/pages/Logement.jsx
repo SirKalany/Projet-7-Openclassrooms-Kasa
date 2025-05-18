@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import logements from "../data/logements.json";
 import Accordion from "../components/Accordion";
 import Carousel from "../components/Carousel";
-import Rating from "../components/Rating"; // ✅ Import externe
+import Rating from "../components/Rating";
 import "../style/Logement.css";
 
 function Logement() {
@@ -14,7 +14,7 @@ function Logement() {
 
   useEffect(() => {
     if (!logement) {
-      navigate("/error", { replace: true });
+      navigate("*", { replace: true });
     }
   }, [logement, navigate]);
 

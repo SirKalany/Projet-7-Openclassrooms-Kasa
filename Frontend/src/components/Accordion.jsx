@@ -2,18 +2,26 @@ import React, { useState } from "react";
 import "../style/Accordion.css";
 
 function Accordion({ menus, className = "" }) {
-  const [activeIndexes, setActiveIndexes] = useState([]);
+  const [activeStates, setActiveStates] = useState(
+    Array(menus.length).fill(false)
+  );
 
   const toggleAccordion = (index) => {
-    setActiveIndexes((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    );
+    setActiveStates((prev) => {
+      const State = [...prev];
+      if (State[index] === true) {
+        State[index] = false;
+      } else {
+        State[index] = true;
+      }
+      return State;
+    });
   };
 
   return (
     <div className={`accordionSection ${className}`}>
       {menus.map((menu, index) => {
-        const isActive = activeIndexes.includes(index);
+        const isActive = activeStates[index];
 
         return (
           <div className="accordionItem" key={index}>

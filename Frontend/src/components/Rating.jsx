@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/Logement.css"; // ou autre fichier contenant les classes .rating, .star, .filled
+import "../style/Logement.css";
 
 function Rating({ value }) {
   const stars = [];

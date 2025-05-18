@@ -39,3 +39,23 @@
 .carouselArrow.right {
   right: 10px;
 }
+
+.carouselCounter {
+  display: none;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 18px;
+  z-index: 5;
+}
+
+@media screen and (min-width: 900px) {
+  .carouselCounter {
+    display: block;
+  }
+}
